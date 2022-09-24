@@ -17,6 +17,11 @@ runs:
     # - id: random-number-generator
     #   run: echo "::set-output name=random-number::$(echo $RANDOM)"
     #   shell: bash
+    - uses: actions/checkout@v3
+
+    - name: ls
+      run: ls -la
+      shell: bash
 
     - uses: actions/setup-python@v4
       with:
