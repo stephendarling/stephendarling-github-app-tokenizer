@@ -6,6 +6,7 @@ inputs:
     required: true
   private-key:
     description: 'Private key file associated with the GitHub app'
+    required: true
 outputs:
   token:
     description: "Token generated from GitHub private-key + app-id"
