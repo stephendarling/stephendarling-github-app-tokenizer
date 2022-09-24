@@ -1,4 +1,4 @@
 #!/bin/bash
 
 ls -la
-python token_getter.py
+python ${GITHUB_ACTION_PATH}/token_generator.py
