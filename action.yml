@@ -25,5 +25,5 @@ runs:
     - name: generate-token
       run: |
         TOKEN=$(python $GITHUB_ACTION_PATH/generate_token.py ${{ inputs.app-id }} ${{ inputs.private-key }})
-        echo ::set-output name=token::${TOKEN}
+        echo "::set-output name=token::${TOKEN}"
       shell: bash
