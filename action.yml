@@ -23,7 +23,7 @@ runs:
 
     - name: generate-token
       run: |
-        APP_ID=${{ inputs.app-id }}
-        PRIVATE_KEY=${{ inputs.private-key }}
+        export APP_ID=${{ inputs.app-id }}
+        export PRIVATE_KEY=${{ inputs.private-key }}
         python $GITHUB_ACTION_PATH/generate_token.py
       shell: bash
