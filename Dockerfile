@@ -6,7 +6,7 @@ COPY requirements.txt .
 COPY token_generator.py .
 COPY entrypoint.sh .
 
-RUN chmod +x entrypoint.sh
+RUN chmod u+x entrypoint.sh
 RUN pip install -r requirements.txt
 
-CMD ./entrypoint.sh
+CMD /app/entrypoint.sh
