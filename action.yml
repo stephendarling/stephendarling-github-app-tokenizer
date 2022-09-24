@@ -26,5 +26,6 @@ runs:
     - name: generate-token
       run: |
         echo "generate token"
-        python $GITHUB_ACTION_PATH/generate_token.py ${{ inputs.app-id }} ${{ inputs.private-key }}
+        TOKEN=$(python $GITHUB_ACTION_PATH/generate_token.py ${{ inputs.app-id }} ${{ inputs.private-key }} > /dev/null)
+        echo ::set-output name=token::${TOKEN}
       shell: bash
