@@ -1,4 +1,9 @@
 #!/bin/bash
 
+echo "workdir workspace ="
 ls -la
-python $GITHUB_WORKSPACE/token_generator.py
+echo "github workspace = "
+ls -la $GITHUB_WORKSPACE
+
+echo "executing python"
+python token_generator.py
