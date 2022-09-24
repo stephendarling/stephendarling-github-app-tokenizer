@@ -13,5 +13,5 @@ app_id = args.app_id
 private_key = args.private_key
 token = f'{app_id}---{private_key}'
 
-print(f"::add-mask::{token}")
+# print(f"::add-mask::{token}")
 print(f"::set-output name=token::{token}")
