@@ -9,22 +9,9 @@ inputs:
 outputs:
   token:
     description: "Token generated from GitHub private-key + app-id"
-    value: ${{ steps.generate-token.outputs.token }}
 runs:
-  using: "composite"
-  steps:
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
-        cache: 'pip'
-
-    - id: install-dependencies
-      run: |
-        pip install -r $GITHUB_ACTION_PATH/requirements.txt
-      shell: bash
-
-    - id: generate-token
-      run: |
-        TOKEN=$(python $GITHUB_ACTION_PATH/generate_token.py ${{ inputs.app-id }} ${{ inputs.private-key }})
-        echo "::set-output name=token::${TOKEN}"
-      shell: bash
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.app-id }}
+    - ${{ inputs.private-key }}
