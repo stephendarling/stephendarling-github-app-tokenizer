@@ -14,4 +14,4 @@ private_key = args.private_key
 print(f'Arg for app_id = {app_id}')
 print(f'Arg for private_key = {private_key}')
 
-print(f"::set-output name=token::{app_id}+{private_key}")
+print(f"::set-output name=token::{app_id}{private_key}")
