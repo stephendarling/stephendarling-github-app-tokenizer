@@ -17,7 +17,6 @@ runs:
     # - id: random-number-generator
     #   run: echo "::set-output name=random-number::$(echo $RANDOM)"
     #   shell: bash
-    - uses: actions/checkout@v3
 
     - name: ls
       run: ls -la
@@ -28,11 +27,14 @@ runs:
         python-version: '3.9'
         # cache: 'pip'
 
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+      shell: bash
+
     - name: Install dependencies
       run: pip install -r requirements.txt
       shell: bash
 
-    # - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-    #   shell: bash
-    # - run: goodbye.sh
-    #   shell: bash
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+      shell: bash
+    - run: goodbye.sh
+      shell: bash
