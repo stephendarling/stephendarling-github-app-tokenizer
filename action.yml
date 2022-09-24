@@ -1,5 +1,5 @@
-name: 'Hello World'
-description: 'Greet someone'
+name: 'stephendarling-github-app-tokenizer'
+description: 'Test with public action'
 inputs:
   app-id:
     description: 'ID of GitHub app'
